@@ -1,7 +1,7 @@
 "use client"
 
 import { Card, CardContent } from "@/components/ui/card"
-import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "@/components/ui/chart"
+import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts"
 import { ChartContainer, ChartTooltipContent } from "@/components/ui/chart"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Label } from "@/components/ui/label"
@@ -93,7 +93,7 @@ export function CompetitorComparison({ competitors }: CompetitorComparisonProps)
                   <CartesianGrid strokeDasharray="3 3" vertical={false} />
                   <XAxis dataKey="name" tick={{ fontSize: 12 }} tickLine={false} axisLine={false} />
                   <YAxis
-                    tickFormatter={(value) => (metric === "priceIndex" ? value.toFixed(2) : value.toString())}
+                    tickFormatter={(value: number) => (metric === "priceIndex" ? value.toFixed(2) : value.toString())}
                     tick={{ fontSize: 12 }}
                     tickLine={false}
                     axisLine={false}

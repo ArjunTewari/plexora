@@ -12,7 +12,7 @@ import {
   Tooltip,
   XAxis,
   YAxis,
-} from "@/components/ui/chart"
+} from "recharts"
 import { Badge } from "@/components/ui/badge"
 import { ArrowDown, ArrowUp } from "lucide-react"
 
@@ -93,7 +93,7 @@ export function ForecastResults({ data, period }: ForecastResultsProps) {
                   tickMargin={8}
                 />
                 <YAxis
-                  tickFormatter={(value) => `$${value}`}
+                  tickFormatter={(value: number) => `$${value}`}
                   tick={{ fontSize: 12 }}
                   tickLine={false}
                   axisLine={false}
@@ -102,7 +102,7 @@ export function ForecastResults({ data, period }: ForecastResultsProps) {
                 <CartesianGrid strokeDasharray="3 3" vertical={false} />
                 <Tooltip
                   formatter={(value: number) => [formatCurrency(value), "Revenue"]}
-                  labelFormatter={(label) => formatDate(label as string)}
+                  labelFormatter={(label: string) => formatDate(label)}
                 />
                 <Area
                   type="monotone"
@@ -132,7 +132,7 @@ export function ForecastResults({ data, period }: ForecastResultsProps) {
                   <YAxis
                     yAxisId="left"
                     orientation="left"
-                    tickFormatter={(value) => `${value}`}
+                    tickFormatter={(value: number) => `${value}`}
                     tick={{ fontSize: 12 }}
                     tickLine={false}
                     axisLine={false}
@@ -140,7 +140,7 @@ export function ForecastResults({ data, period }: ForecastResultsProps) {
                   <YAxis
                     yAxisId="right"
                     orientation="right"
-                    tickFormatter={(value) => `$${value}`}
+                    tickFormatter={(value: number) => `$${value}`}
                     tick={{ fontSize: 12 }}
                     tickLine={false}
                     axisLine={false}

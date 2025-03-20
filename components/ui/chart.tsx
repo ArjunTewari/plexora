@@ -15,7 +15,10 @@ interface ChartContainerProps {
 const ChartContainer = ({ children, config, className }: ChartContainerProps) => {
   const colorValue = config?.value?.color || "hsl(var(--primary))"
   return (
-    <div className={cn("relative", className)} style={{ "--color-value": colorValue }}>
+    <div 
+      className={cn("relative", className)} 
+      style={{ ["--color-value" as string]: colorValue } as React.CSSProperties}
+    >
       {children}
     </div>
   )
