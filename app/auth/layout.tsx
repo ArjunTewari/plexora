@@ -11,11 +11,8 @@ export default function AuthLayout({
   children: React.ReactNode
 }>) {
   return (
-    <div className={inter.className}>
-      <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-        <main className="min-h-screen">{children}</main>
-        <Toaster />
-      </ThemeProvider>
+    <div className="flex min-h-screen w-full">
+      <main className="flex-1">{children}</main>
     </div>
   )
 } 

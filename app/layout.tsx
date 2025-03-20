@@ -26,7 +26,13 @@ export default function RootLayout({
       <body className={inter.className}>
         <Providers>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-            {children}
+            <SidebarProvider>
+              <div className="flex min-h-screen">
+                <AppSidebar />
+                <main className="flex-1">{children}</main>
+              </div>
+              <Toaster />
+            </SidebarProvider>
           </ThemeProvider>
         </Providers>
       </body>
